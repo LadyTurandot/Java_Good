@@ -8,15 +8,17 @@ public class MyFirstProgram {
 
         System.out.println("This is my first program");
 
-        double x = 4;
-        double y = 9;
-        double x1 = 16;
-        double y1 = 25;
-        System.out.println ("Расстояние между точками с координатами: " + x + ";" + y + " и " + x1 + ";" + y1 + " = " + distance(x, y, x1, y1));
+        Point p1 = new Point ();
+        Point p2 = new Point ();
+       p1.x = 4;
+       p1.y = 9;
+       p2.x = 16;
+       p2.y = 25;
+        System.out.println ("Расстояние между точками с координатами: " + p1.x + ";" + p1.y + " и " + p2.x + ";" + p2.y + " = " + distance(p1, p2));
     }
 
-    public static double distance (double x, double y, double x1, double y1) {
-        return Math.sqrt(((x-x1)*(x-x1))+((y-y1)*(y-y1)));
+    public static double distance (Point p1, Point p2) {
+        return Math.sqrt(((p1.x-p2.x)*(p1.x-p2.x))+((p1.y-p2.y)*(p1.y-p2.y)));
     }
 }
 
