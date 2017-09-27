@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook;
 
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -14,19 +15,16 @@ public class GroupCreationTests {
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
-        login("Admin", "secret");
+        login("admin", "secret");
     }
 
     private void login(String username, String password) {
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();
         wd.findElement(By.name("user")).sendKeys(username);
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys("Admin");
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys(password);
@@ -37,17 +35,10 @@ public class GroupCreationTests {
     public void testGroupCreation() {
 
         gotoGroupPage();
-        gotoGroupPage();
         initGroupCreation();
-        backOutFromGroupPage();
-        initGroupCreation();
-        fillGroupForm(new GroupData("test1", "test2", "test3"));
+        fillGroupForm(new GroupData("test3", "test3", "test3"));
         submitGroupCreation();
         returnToGroupPage();
-    }
-
-    private void backOutFromGroupPage() {
-        wd.navigate().back();
     }
 
     private void returnToGroupPage() {
@@ -59,7 +50,6 @@ public class GroupCreationTests {
     }
 
     private void fillGroupForm(GroupData groupData) {
-        wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
