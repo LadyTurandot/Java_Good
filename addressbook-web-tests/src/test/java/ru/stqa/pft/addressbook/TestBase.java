@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
     FirefoxDriver wd;
 
+
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
             wd.switchTo().alert();
@@ -101,5 +102,19 @@ public class TestBase {
 
     protected void gotoAddNewPage() {
         wd.findElement(By.linkText("add new")).click();
+    }
+
+    protected void acceptAlertSwitch() {
+        wd.switchTo().alert().accept();
+    }
+
+    protected void selectContact() {
+        if (!wd.findElement(By.name("selected[]")).isSelected()) {
+            wd.findElement(By.name("selected[]")).click();
+        }
+    }
+
+    protected void returnToHome() {
+        wd.findElement(By.linkText("home")).click();
     }
 }
