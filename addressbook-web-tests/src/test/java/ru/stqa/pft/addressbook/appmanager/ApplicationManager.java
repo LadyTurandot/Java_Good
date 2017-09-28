@@ -41,10 +41,6 @@ public class ApplicationManager {
         wd.quit();
     }
 
-    public void gotoAddNewPage() {
-        wd.findElement(By.linkText("add new")).click();
-    }
-
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
