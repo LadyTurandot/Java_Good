@@ -10,7 +10,7 @@ public class ContactCreationTests extends TestBase {
 
         app.gotoAddNewPage();
         app.fillContactForm(new ContactData("Contact3", "LastNameContact3", "1234567980", "contact3@gmail.com"));
-        app.scriptSubmitionPath();
+        app.getGroupHelper().scriptSubmitionPath();
         app.returnToHomePage();
     }
 
