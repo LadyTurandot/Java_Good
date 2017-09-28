@@ -25,7 +25,7 @@ public class ContactDeletionTests {
     }
     
     @Test
-    public void ContactDeletionTests() {
+    public void testContactDeletion() {
         wd.get("http://localhost/addressbook/");
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();
@@ -38,6 +38,7 @@ public class ContactDeletionTests {
             wd.findElement(By.name("selected[]")).click();
         }
         wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+        wd.switchTo().alert().accept();
         wd.findElement(By.linkText("home")).click();
     }
 
