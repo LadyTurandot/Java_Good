@@ -9,6 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../addressbook-web-tests/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
