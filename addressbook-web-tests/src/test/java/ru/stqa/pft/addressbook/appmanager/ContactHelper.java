@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model1.ContactData;
 
-public class ContactHelper extends HelperBase{
+public class ContactHelper extends HelperBase {
 
     public ContactHelper(WebDriver wd) {
-        super (wd);
+        super(wd);
     }
 
 
@@ -20,13 +20,13 @@ public class ContactHelper extends HelperBase{
     }
 
     public void fillContactForm(ContactData contactData, boolean creation) {
-        type (By.name("firstname"), contactData.getFirstname());
-        type (By.name("lastname"), contactData.getLastname());
-        type (By.name("mobile"),contactData.getMobile());
-        type (By.name("email"), contactData.getEmail());
+        type(By.name("firstname"), contactData.getFirstname());
+        type(By.name("lastname"), contactData.getLastname());
+        type(By.name("mobile"), contactData.getMobile());
+        type(By.name("email"), contactData.getEmail());
 
-        if (creation){
-            new Select(wd.findElement(By.name("new_group"))). selectByVisibleText(contactData.getGroup());
+        if (creation) {
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -39,18 +39,18 @@ public class ContactHelper extends HelperBase{
 
     public void selectContact() {
         if (!wd.findElement(By.name("selected[]")).isSelected()) {
-            click (By.name("selected[]"));
+            click(By.name("selected[]"));
         }
     }
 
     public void returnToHome() {
 
-        click (By.linkText("home"));
+        click(By.linkText("home"));
     }
 
     public void scriptDeletingPath() {
 
-        click (By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     }
 
     public void initContactModification() {
@@ -59,7 +59,24 @@ public class ContactHelper extends HelperBase{
 
     }
 
+    public void scriptSubmitionPath() {
+
+        click(By.xpath("//div[@id='content']/form/input[21]"));
+    }
+
     public void submitContactModification() {
         click(By.name("update"));
+    }
+
+    public void createContact(ContactData contact, boolean b) {
+        fillContactForm(contact, b);
+        scriptSubmitionPath();
+        returnToHomePage();
+
+    }
+
+    public boolean isThereAContact() {
+
+        return isElementPresent(By.name("selected[]"));
     }
 }
