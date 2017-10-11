@@ -1,7 +1,5 @@
 package ru.stqa.pft.sandbox;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 public class MyFirstProgram {
 
     public static void main(String[] args) {

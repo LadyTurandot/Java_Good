@@ -40,10 +40,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("selected[]"));
     }
 
-    public void scriptSubmitionPath() {
+    //public void scriptSubmitionPath() {
 
-        click(By.xpath("//div[@id='content']/form/input[21]"));
-    }
+        //click(By.xpath("//div[@id='content']/form/input[21]"));
+   // }
 
     public void submitGroupModification() {
         click(By.name("update"));
@@ -63,5 +63,9 @@ public class GroupHelper extends HelperBase {
     public boolean isThereAGroup() {
 
         return isElementPresent(By.name("selected[]"));
+    }
+
+    public int getGroupCount() {
+        return wd.findElements(By.name("selected[]")).size();
     }
 }
