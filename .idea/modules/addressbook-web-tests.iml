@@ -18,6 +18,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.codeborne:phantomjsdriver:1.4.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-java:3.5.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.hamcrest:java-hamcrest:2.0.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.beust:jcommander:1.64" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-chrome-driver:3.5.3" level="project" />
@@ -69,6 +70,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.codeborne:phantomjsdriver:1.4.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.seleniumhq.selenium:selenium-java:3.5.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hamcrest:java-hamcrest:2.0.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.beust:jcommander:1.64" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.seleniumhq.selenium:selenium-chrome-driver:3.5.3" level="project" />
@@ -120,6 +122,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.testng:testng:6.11" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.codeborne:phantomjsdriver:1.4.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:selenium-java:3.5.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:java-hamcrest:2.0.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.beust:jcommander:1.64" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:selenium-chrome-driver:3.5.3" level="project" />
