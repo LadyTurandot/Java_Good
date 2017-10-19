@@ -20,14 +20,14 @@ public class NavigationHelper extends HelperBase {
     }
 
 
-    public void gotoAddNewPage() {
+    public void addNewPage() {
         if (isElementPresent(By.id("addaddressbookentry"))){
             return;
         }
         click(By.linkText("add new"));
     }
 
-    public void gotoHome() {
+    public void Home() {
         click(By.linkText("home"));
     }
 }
