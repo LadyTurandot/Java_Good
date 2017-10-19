@@ -10,7 +10,9 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model1.ContactData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -44,6 +46,11 @@ public class ContactHelper extends HelperBase {
     public void selectContact(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
+
+    public void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    }
+
 
     public void returnToHome() {
 
@@ -90,6 +97,15 @@ public class ContactHelper extends HelperBase {
         returnToHome();
     }
 
+    public void delete(ContactData contact) {
+        selectContactById(contact.getId());
+        scriptDeletingPath();
+        acceptAlertSwitch();
+        returnToHome();
+
+    }
+
+
 
     public boolean isThereAContact() {
 
@@ -112,4 +128,18 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<ContactData>();
+        List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
+        for (WebElement element : elements) {
+            List <WebElement> contactEntries = element.findElements(By.cssSelector("td"));
+            String firstname = contactEntries.get(2).getText();
+            String lastname = contactEntries.get(1).getText();
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+        }
+        return contacts;
+    }
+
 }
