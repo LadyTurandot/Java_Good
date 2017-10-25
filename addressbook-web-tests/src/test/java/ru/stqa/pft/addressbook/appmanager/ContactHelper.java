@@ -59,8 +59,9 @@ public class ContactHelper extends HelperBase {
 
 
     public void initContactModificationById(int id) {
-        wd.findElement(By.cssSelector("img[alt=\"Edit\"")).click();
-
+        WebElement checkbox = wd.findElement(By.cssSelector("input[value='" + id + "']"));
+        WebElement contactRow = checkbox.findElement(By.xpath("./../../."));
+        contactRow.findElement(By.xpath(".//img[@title='Edit']")).click();
     }
 
 
