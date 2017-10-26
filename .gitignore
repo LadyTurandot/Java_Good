@@ -15,3 +15,4 @@ gradle-app.setting
 .idea/workspace.xml
 sandbox/out/production/classes/MyFirstProgram.class
 sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
+*.log
