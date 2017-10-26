@@ -3,19 +3,19 @@ package ru.stqa.pft.addressbook.model1;
 import java.io.File;
 
 public class ContactData {
-    private  int id = Integer.MAX_VALUE;
-    private  String firstname;
-    private  String lastname;
-    private  String mobile;
-    private  String email;
+    private int id = Integer.MAX_VALUE;
+    private String firstname;
+    private String lastname;
+    private String mobile;
+    private String email;
     private String group;
-    private  String homePhone;
-    private  String workPhone;
-    private  String allPhones;
-    private  String email2;
-    private  String email3;
-    private  String allEmails;
-    private  String address;
+    private String homePhone;
+    private String workPhone;
+    private String allPhones;
+    private String email2;
+    private String email3;
+    private String allEmails;
+    private String address;
 
     public File getPhoto() {
         return photo;
