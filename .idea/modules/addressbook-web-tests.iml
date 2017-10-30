@@ -32,6 +32,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-remote-driver:3.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.google.code.gson:gson:2.8.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: mysql:mysql-connector-java:5.1.44" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-api:3.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: cglib:cglib-nodep:3.2.4" level="project" />
@@ -90,6 +91,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.seleniumhq.selenium:selenium-remote-driver:3.5.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.google.code.gson:gson:2.8.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:5.1.44" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.seleniumhq.selenium:selenium-api:3.5.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: cglib:cglib-nodep:3.2.4" level="project" />
@@ -148,6 +150,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:selenium-remote-driver:3.5.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: mysql:mysql-connector-java:5.1.44" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:selenium-api:3.5.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: cglib:cglib-nodep:3.2.4" level="project" />
