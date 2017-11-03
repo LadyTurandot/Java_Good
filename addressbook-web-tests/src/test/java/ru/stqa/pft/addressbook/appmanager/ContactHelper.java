@@ -102,18 +102,16 @@ public class ContactHelper extends HelperBase {
         returnToHome();
     }
 
-    public void addContactToGroup(ContactData contact) {
-        selectContactById(contact.getId());
+    public void addContactToGroup() {
+        //selectContactById(contact.getId());
         selectGroupForAdding();
         submitAddContact();
-        returnToHome();
     }
 
-    public void removeContactFromGroup(ContactData contact) {
+    public void removeContactFromGroup() {
         selectGroupFromList();
-        selectContactById(contact.getId());
+        //selectContactById(contact.getId());
         removeContact();
-        returnToHome();
     }
 
     private void removeContact() {
