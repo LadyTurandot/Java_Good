@@ -109,6 +109,22 @@ public class ContactHelper extends HelperBase {
         returnToHome();
     }
 
+    public void removeContactFromGroup(ContactData contact) {
+        selectGroupFromList();
+        selectContactById(contact.getId());
+        removeContact();
+        acceptAlertSwitch();
+        returnToHome();
+    }
+
+    private void removeContact() {
+        click(By.cssSelector("div.left:nth-child(8) > input:nth-child(1)"));
+    }
+
+    private void selectGroupFromList() {
+        click(By.cssSelector("#right > select:nth-child(1)"));
+    }
+
     private void submitAddContact() {
         click(By.name("add"));
     }
