@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.tests;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model1.ContactData;
@@ -34,7 +35,7 @@ public class ContactCreationTests extends TestBase {
             XStream xstream = new XStream();
             xstream.processAnnotations(ContactData.class);
             List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
-            return contacts.stream().map((g)-> new Object[] {g}).collect(Collectors.toList()).iterator();
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
         }
     }
 
@@ -47,9 +48,10 @@ public class ContactCreationTests extends TestBase {
                 json += line;
                 line = reader.readLine();
             }
-            Gson gson = new Gson ();
-            List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
-            return contacts.stream().map((g)-> new Object[] {g}).collect(Collectors.toList()).iterator();
+            Gson gson = new Gson();
+            List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>() {
+            }.getType());
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
         }
     }
 
@@ -63,15 +65,26 @@ public class ContactCreationTests extends TestBase {
         return list.iterator();
     }*/
 
+
+    @BeforeMethod
+
+    public void ensurePreconditions() {
+        if (app.db().groups().size() == 0) {
+            app.goTo().groupPage();
+            app.group().create(new GroupData().withName("test1"));
+        }
+    }
+
+
     @Test(dataProvider = "validContactsFromJson")
-    public void testContactCreation (ContactData contact) {
+    public void testContactCreation(ContactData contact) {
         Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         app.goTo().addNewPage();
         //File photo = new File("src/test/resources/stru.png");
         //ContactData contact = new ContactData().withFirstname(firstName).withLastname(name)
-                //.withMobile(mobile).withEmail(email). withGroup(group); //.withPhoto(photo);
-        app.contact().create(contact .inGroup(groups.iterator().next()), true);
+        //.withMobile(mobile).withEmail(email). withGroup(group); //.withPhoto(photo);
+        app.contact().create(contact.inGroup(groups.iterator().next()), true);
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(
@@ -81,16 +94,16 @@ public class ContactCreationTests extends TestBase {
     }
 
 
-    //@Test
-    //public void testBadContactCreation() {
-        //Contacts before = app.db().contacts();
-        //app.goTo().addNewPage();
-        //ContactData contact = new ContactData().withFirstname("Contact3'").withLastname("LastNameContact3").withMobile("1234567980").withEmail("contact3@gmail.com")/*.withGroup("test3")*/;
-       //app.contact().create(contact, true);
-        //assertThat(app.contact().count(), equalTo(before.size()));
-        //Contacts after = app.db().contacts();
-       // assertThat(after, equalTo(before));
-        //verifyContactListInUI();
-    //}
+    @Test(enabled = false)
+    public void testBadContactCreation() {
+        Contacts before = app.db().contacts();
+        app.goTo().addNewPage();
+        ContactData contact = new ContactData().withFirstname("Contact3'").withLastname("LastNameContact3").withMobile("1234567980").withEmail("contact3@gmail.com")/*.withGroup("test3")*/;
+        app.contact().create(contact, true);
+        assertThat(app.contact().count(), equalTo(before.size()));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before));
+        verifyContactListInUI();
+    }
 }
 

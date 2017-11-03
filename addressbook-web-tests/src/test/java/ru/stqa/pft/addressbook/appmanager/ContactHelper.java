@@ -100,9 +100,23 @@ public class ContactHelper extends HelperBase {
         acceptAlertSwitch();
         contactCache = null;
         returnToHome();
-
     }
 
+    public void addContactToGroup(ContactData contact) {
+        selectContactById(contact.getId());
+        selectGroupForAdding();
+        submitAddContact();
+        returnToHome();
+    }
+
+    private void submitAddContact() {
+        click(By.name("add"));
+    }
+
+    private void selectGroupForAdding() {
+        click(By.cssSelector(".right > select:nth-child(2)"));
+
+    }
     public boolean isThereAContact() {
 
         return isElementPresent(By.name("selected[]"));
