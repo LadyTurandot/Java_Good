@@ -16,3 +16,4 @@ gradle-app.setting
 sandbox/out/production/classes/MyFirstProgram.class
 sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
 *.log
+*.log

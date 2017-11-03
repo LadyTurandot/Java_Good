@@ -31,15 +31,15 @@ public class ContactHelper extends HelperBase {
         type(By.name("email"), contactData.getEmail());
         //attach(By.name("photo"), contactData.getPhoto());
 
-        if (creation) {
+        /*if (creation) {
             if (contactData.getGroups().size() > 0) {
                 Assert.assertTrue(contactData.getGroups().size() ==1);
             }
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
         } else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
-        }
+            Assert.assertFalse(isElementPresent(By.name("new_group")));*/
     }
+
 
     public void acceptAlertSwitch() {
 
@@ -113,17 +113,17 @@ public class ContactHelper extends HelperBase {
         selectGroupFromList();
         selectContactById(contact.getId());
         removeContact();
-        acceptAlertSwitch();
         returnToHome();
     }
 
     private void removeContact() {
-        click(By.cssSelector("div.left:nth-child(8) > input:nth-child(1)"));
+        click(By.name("remove"));
     }
 
     private void selectGroupFromList() {
-        click(By.cssSelector("#right > select:nth-child(1)"));
+        click(By.xpath("//form[@id='right']/select//option[3]"));
     }
+
 
     private void submitAddContact() {
         click(By.name("add"));
@@ -133,6 +133,7 @@ public class ContactHelper extends HelperBase {
         click(By.cssSelector(".right > select:nth-child(2)"));
 
     }
+
     public boolean isThereAContact() {
 
         return isElementPresent(By.name("selected[]"));
@@ -151,7 +152,7 @@ public class ContactHelper extends HelperBase {
         contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements) {
-            List <WebElement> contactEntries = element.findElements(By.cssSelector("td"));
+            List<WebElement> contactEntries = element.findElements(By.cssSelector("td"));
             String firstname = contactEntries.get(2).getText();
             String lastname = contactEntries.get(1).getText();
             String allPhones = contactEntries.get(5).getText();
@@ -180,7 +181,6 @@ public class ContactHelper extends HelperBase {
                 .withFirstname(firstname).withLastname(lastname).withHomePhone(home).withMobile(mobile).withWorkPhone(work)
                 .withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address);
     }
-
-
-
 }
+
+
