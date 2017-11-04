@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1_main.iml" group="mantis-tests1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1_test.iml" group="mantis-tests1" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox_main.iml" group="sandbox" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox_test.iml" group="sandbox" />
