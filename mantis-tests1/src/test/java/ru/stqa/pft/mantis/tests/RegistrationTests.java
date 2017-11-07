@@ -15,23 +15,26 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class RegistrationTests extends TestBase{
 
-    @BeforeMethod
+    //@BeforeMethod
     public void startMailServer() {
+
         app.mail().start();
     }
 
     @Test
     public void testRegistration() throws MessagingException, IOException {
         long now = System.currentTimeMillis();
-        String user = String.format("user%s", now);
+        String username = String.format("username%s", now);
         String password = "password";
-        String email = String.format("user%s@localhost.localdomain", now);
-        app.registration().start(user, email);
-        List<MailMessage> mailMessages = app.mail().waitForMail(2,1000);
+        String email = String.format("username%s@localhost" , now);
+        app.james().createUser(username, password);
+        app.registration().start(username, email);
+        //List<MailMessage> mailMessages = app.mail().waitForMail(2,1000);
+        List<MailMessage> mailMessages = app.james().waitForMail(username, password, 100000);
         String confirmationLink = findConfirmationLink(mailMessages, email);
         app.registration().finish(confirmationLink, password);
         //app.registration().logout();
-        Assert.assertTrue(app.newSession().login(user, password));
+        Assert.assertTrue(app.newSession().login(username, password));
     }
 
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
@@ -40,8 +43,9 @@ public class RegistrationTests extends TestBase{
         return regex.getText(mailMessage.text);
     }
 
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     public void stopMailServer() {
+
         app.mail().stop();
     }
 }
