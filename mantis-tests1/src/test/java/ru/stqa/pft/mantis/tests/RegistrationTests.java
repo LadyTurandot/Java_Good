@@ -24,17 +24,17 @@ public class RegistrationTests extends TestBase{
     @Test
     public void testRegistration() throws MessagingException, IOException {
         long now = System.currentTimeMillis();
-        String username = String.format("username%s", now);
+        String user = String.format("username%s", now);
         String password = "password";
         String email = String.format("username%s@localhost" , now);
-        app.james().createUser(username, password);
-        app.registration().start(username, email);
+        app.james().createUser(user, password);
+        app.registration().start(user, email);
         //List<MailMessage> mailMessages = app.mail().waitForMail(2,1000);
-        List<MailMessage> mailMessages = app.james().waitForMail(username, password, 100000);
+        List<MailMessage> mailMessages = app.james().waitForMail(user, password, 100000);
         String confirmationLink = findConfirmationLink(mailMessages, email);
         app.registration().finish(confirmationLink, password);
         //app.registration().logout();
-        Assert.assertTrue(app.newSession().login(username, password));
+        Assert.assertTrue(app.newSession().login(user, password));
     }
 
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
