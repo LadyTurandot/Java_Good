@@ -9,7 +9,7 @@ import java.sql.*;
 public class DbConnectionTest {
 
     @Test
-    public void testDbConnection() {
+    public Users testDbConnection() {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/bugtracker?user=root&password=");
@@ -17,13 +17,15 @@ public class DbConnectionTest {
             ResultSet rs = st.executeQuery("select id  from mantis_user_table ");
             Users users = new Users();
             while (rs.next()) {
-                users.add (new UserData().withId(rs.getInt("id")));
+                users.add(new UserData().withId(rs.getInt("id")).withUsername(rs.getString("username")));
             }
+
             rs.close();
             st.close();
             conn.close();
 
             System.out.println(users);
+
 
             // Do something with the Connection
 
@@ -35,6 +37,7 @@ public class DbConnectionTest {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
 
+        return null;
     }
 }
 

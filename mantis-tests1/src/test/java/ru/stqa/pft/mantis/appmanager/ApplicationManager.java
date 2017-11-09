@@ -24,6 +24,8 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private DbHelper dbHelper;
+    private ResetPasswordHelper passwordHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -33,6 +35,7 @@ public class ApplicationManager {
     public void init() throws IOException {
         String target = System.getProperty("target", "local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+        dbHelper = new DbHelper();
     }
 
     public void stop() {
@@ -41,7 +44,7 @@ public class ApplicationManager {
         }
     }
 
-    public HttpSession newSession(){
+    public HttpSession newSession() {
         return new HttpSession(this);
     }
 
@@ -51,13 +54,13 @@ public class ApplicationManager {
 
     public RegistrationHelper registration() {
         if (registrationHelper == null) {
-            registrationHelper =  new RegistrationHelper(this);
+            registrationHelper = new RegistrationHelper(this);
         }
         return registrationHelper;
     }
 
     public FtpHelper ftp() {
-        if (ftp == null){
+        if (ftp == null) {
             ftp = new FtpHelper(this);
         }
         return ftp;
@@ -78,18 +81,30 @@ public class ApplicationManager {
         return wd;
     }
 
+
     public MailHelper mail() {
-        if (mailHelper == null){
+        if (mailHelper == null) {
             mailHelper = new MailHelper(this);
         }
         return mailHelper;
     }
 
     public JamesHelper james() {
-        if (jamesHelper == null){
+        if (jamesHelper == null) {
             jamesHelper = new JamesHelper(this);
         }
         return jamesHelper;
+    }
 
+    public ResetPasswordHelper passwordHelper() {
+        if (passwordHelper == null) {
+            passwordHelper = new ResetPasswordHelper(this);
+        }
+        return passwordHelper;
+    }
+
+
+    public DbHelper db() {
+        return dbHelper;
     }
 }
