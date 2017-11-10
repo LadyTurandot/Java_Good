@@ -9,7 +9,6 @@ import ru.stqa.pft.mantis.model.MailMessage;
 import ru.stqa.pft.mantis.model.UserData;
 
 import javax.mail.MessagingException;
-import javax.persistence.Id;
 import java.io.IOException;
 import java.util.List;
 
@@ -25,9 +24,9 @@ public class ResetPasswordTest extends TestBase {
     @Test
     public void testResetPassword() throws MessagingException, IOException {
         List<UserData> users = app.db().users();
-        UserData selecteduser = users.iterator().next();
-        String email = selecteduser.getEmail();
-        String user = selecteduser.getUsername();
+        UserData selectedUser = users.iterator().next();
+        String email = selectedUser.getEmail();
+        String user = selectedUser.getUsername();
         String password = "newpassword";
         app.passwordHelper().adminStart();
         app.passwordHelper().openListOfUsers();
