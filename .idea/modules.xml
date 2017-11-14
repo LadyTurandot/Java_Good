@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample_main.iml" group="github-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/github-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/github-sample_test.iml" group="github-sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1_main.iml" group="mantis-tests1" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests1_test.iml" group="mantis-tests1" />
