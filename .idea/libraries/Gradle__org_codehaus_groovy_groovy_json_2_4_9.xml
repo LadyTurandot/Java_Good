@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.codehaus.groovy:groovy-json:2.4.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-json/2.4.9/cf22201fc1dd70eeeaee4b2abef47bee93e824a8/groovy-json-2.4.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-json/2.4.9/e0ba4a97ade53a685aeb584cda5c8c072e38df31/groovy-json-2.4.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
