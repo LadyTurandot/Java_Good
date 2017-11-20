@@ -42,7 +42,7 @@ public class RemovingContactFromGroupTests extends TestBase {
         }
     }
 
-    @Test
+    @Test(enabled = false)
     public void testRemovingContactFromGroup() {
         Contacts contactListBefore = app.db().contacts();
         Groups groupListBefore = app.db().groups();
